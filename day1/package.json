@@ -1,22 +1,15 @@
 {
-  "name": "myappday1",
+  "name": "workshop",
   "version": "1.0.0",
-  "description": "myApp Day1",
-  "main": "index.js",
+  "description": "",
+  "main": "helloworld.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pukapon/trueincube_web_2017.git"
-  },
-  "keywords": [
-    "trueincube"
-  ],
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/pukapon/trueincube_web_2017/issues"
-  },
-  "homepage": "https://github.com/pukapon/trueincube_web_2017#readme"
+  "dependencies": {
+    "upper-case": "^1.1.3"
+  }
 }
