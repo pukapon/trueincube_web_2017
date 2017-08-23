@@ -35,7 +35,7 @@
 | 31 สิงหาคม 2560|CSS, Bootstrap : Advanced |	Workshop : ออกแบบ UI ของ Web Application ด้วย HTML5, CSS และ Bootstrap|
 | 7 กันยายน 2560|NodeJS, npm, ExpressJS |	Workshop : Build Web Application with NodeJS + ExpressJS|
 | 14 กันยายน 2560|NodeJS : Jade Render templete, validate, Cookies & Session |	Workshop : Build Surway Application|
-| 21 กันยายน 2560 | Introduction to MongoDB ⋅⋅* CRUD |	Workshop : Build Employee Record System Application|
+| 21 กันยายน 2560 | Introduction to MongoDB <br>    - CRUD |	Workshop : Build Employee Record System Application|
 | 28 กันยายน 2560 | Introduction to MongooseJS <br>    - CRUD <br>    - Schema & Model<br>    - Validation | Workshop : Build Employee Record System Application with MongooseJS|
 | 5 ตุลาคม 2560 | Introduction to AngularJS <br>    - Bower <br>    - Model & View <br>    - Controller & Filter | Workshop : Build Mockup & View Employee Record System Application|
 | 12 ตุลาคม 2560 | AngularJS : Cookies & Rest API |	Workshop : Build Employee Record System Application with AngularJS|
