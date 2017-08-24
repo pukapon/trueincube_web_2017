@@ -1,0 +1,3 @@
+url : https://6cb61b96-06a5-4727-9b80-7907952dc0da.mock.pstmn.io/get/
+
+x-api-key : 61c3233bc8b64efe9b77b2c10ce1e2c4
