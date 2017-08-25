@@ -9,8 +9,19 @@
 </head>
 
 <body>
-    <button type="button" id="btn" class="btn btn-info">Click</button>
-    <script>
+	<button type="button" id="btn" class="btn btn-info">Click</button>
+	<script>
+    $(document).ready(function() {
+
+        var x = $( "#btn" ).hasClass( "btn-info" );
+        if (x) {
+            alert("Has btn-info");
+        }
+        else{
+            alert("Don't Has Class btn-info");
+        }
+
+    });
     </script>
 </body>
 

@@ -6,16 +6,51 @@
     <title></title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    
 </head>
 
 <body>
-    <div id="list" class="row">
+    <div class="row" id="list">
 
     </div>
     <button type="button" id="btn" class="btn btn-info">Click</button>
 
     <script>
     $(document).ready(function() {
+        $('#btn').click(function() {
+            $.ajax({
+                url: "https://6cb61b96-06a5-4727-9b80-7907952dc0da.mock.pstmn.io/get/",
+                data: { signature: "authHeader" },
+                type: "GET",
+                beforeSend: function(xhr) { 
+                    xhr.setRequestHeader('x-api-key', '61c3233bc8b64efe9b77b2c10ce1e2c4');
+                },
+                success: function(result) {
+                    console.log(result);
+                    var x = $.parseJSON( result ).data;
+                    // console.log(x);
+
+                    var content = $('#list');
+
+                    $.each(x,function(i,doc){
+                        console.log(doc);
+                        var item = $('<div>'),
+                        title = $('<h1>'),
+                        info = $('<p>');
+
+                        // Add content to the DOM
+                        title.text(doc.product);
+                        info.text( doc.price );
+                        // Append the infos and title to the item
+                        item.append(title,info);
+                        // Append the item to the content
+                        item.appendTo(content);
+                    });
+                }
+            });
+        });
+
 
     });
     </script>

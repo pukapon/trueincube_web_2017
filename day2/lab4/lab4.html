@@ -11,7 +11,16 @@
 <body>
     <button type="button" id="btn" class="btn btn-info">Click</button>
     <script>
+    $(document).ready(function() {
 
+        var x = $("#btn").hasClass("btn-info");
+        if (x) {
+            $("#btn").removeClass("btn-info");
+        } else {
+            $("#btn").removeClass("btn-danger");
+        }
+
+    });
     </script>
 </body>
 

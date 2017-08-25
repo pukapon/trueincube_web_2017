@@ -19,15 +19,26 @@
                 <input type="text" id="text" name="text" class="form-control">
             </div>
             <div class="col">
-                <button type="button" class="btn btn-success">Add</button>
-                <button type="button" class="btn btn-danger">Delete</button>
+                <button type="button" class="btn btn-success" onclick="myClick(document.getElementById('text').value)">Add</button>
+                <button type="button" class="btn btn-danger" onclick="del(document.getElementById('text').value)">Delete</button>
             </div>
         </div>
         <div id="myDIV">
         </div>
     </div>
     <script>
-    
+    function myClick(value) {
+        console.log(value);
+        var paragraph = document.createElement("P"); // Create a <p> element
+        var text = document.createTextNode(value); // Create a text node
+        paragraph.appendChild(text); // Append the text to <p>
+        document.getElementById("myDIV").appendChild(paragraph); // Append <p> to <div> with id="myDIV"
+    }
+    function del(value) {
+        var list = document.getElementById("myDIV");
+        console.log(list);
+        list.removeChild(list.childNodes[value]);
+    }
     </script>
 </body>
 
