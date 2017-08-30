@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <h1>Hello AngularJS</h1>
+    </div>
+    <script>
+    var app = angular.module("myApp", []);
+
+    app.controller('myCtrl', function($scope) {
+        $scope.topping = [
+            { id: "5002", type: "Glazed" },
+            { id: "5005", type: "Sugar" },
+            { id: "5007", type: "Powdered Sugar" },
+            { id: "5006", type: "Chocolate with Sprinkles" },
+            { id: "5003", type: "Chocolate" },
+            { id: "5004", type: "Maple" }
+        ];
+    });
+    </script>
+</body>
+
+</html>
