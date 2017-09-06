@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <header>
+            <h1 class="text-center">Review </h1>
+        </header>
+        <div class="container">
+
+            <form class="form-horizontal">
+                <fieldset>
+                    <legend>Review Form</legend>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">ชื่อ</label>
+                        <div class="col-md-4">
+                            <input type="text" ng-model="data.firstname" name="firstname" id="firstname" class="form-control input-md">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label"> </label>
+                        <div class="col-md-4">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <script>
+        var app = angular.module("myApp", []);
+        app.controller('myCtrl', function($scope) {
+            
+        });
+        </script>
+</body>
+
+</html>
