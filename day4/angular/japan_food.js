@@ -12,7 +12,7 @@
       id: 2 ,
       name: "Uchidaya Tokusei Ramen",
       detail: "เมนูซิกเนเจอร์รสชาติตามแบบฉบับโยโกฮาม่า เส้นราเมนกลมหนึบกำลังดีในน้ำซุปกระดูกหมูและนำมันไก่ ท้อปปิ้งด้วยหมูชาชู ไข่ ผักโขม และสาหร่าย" ,
-      photo:"https://asia-public.foodpanda.com/dynamic/production/th/images/products/649/649523_1499163965_ma.jpg"
+      photo:"https://asia-public.foodpanda.com/dynamic/production/th/images/products/649/649523_1499163965_ma.jpg",
       qty: 60,
       price: 290
     },
