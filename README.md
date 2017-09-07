@@ -33,7 +33,7 @@
 | 17 สิงหาคม 2560| - |	งด |
 | 24 สิงหาคม 2560|JavaScript : Advanced , Introduction to MongoDB  |	Workshop : Build Web Application with JavaScript|
 | 31 สิงหาคม 2560|Introduction to AngularJS <br>    - Bower <br>    - Model & View <br>    - Controller & Filter <br> MongoDB  |	Workshop : ออกแบบ UI ของ Web Application ด้วย HTML5, CSS และ Bootstrap|
-| 7 กันยายน 2560|AngularJS <br> - Event <br> - Form  | Workshop : UI Web Application && Mock Up |
+| 7 กันยายน 2560|AngularJS <br> - Event <br> - Form && Validate  | Workshop : UI Web Application && Mock Up |
 | 14 กันยายน 2560| AngularJS : Cookies & Rest API  | Workshop : Build Employee Record System Application with AngularJS |
 | 21 กันยายน 2560 | NodeJS, npm, ExpressJS 	| Workshop : Build Web Application with NodeJS + ExpressJS  |
 | 28 กันยายน 2560 | NodeJS : Jade Render templete, validate, Cookies & Session  | Workshop : Build Surway Application |
