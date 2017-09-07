@@ -5,9 +5,9 @@ const db = mongoose.connect('mongodb://localhost:27017/workshop_3', { useMongoCl
 
 var topicSchema = mongoose.Schema({
     name: String,
-    forum_id: { type: Schema.Types.ObjectId, ref: 'Forum'},
+    forum_id: { type: Schema.Types.ObjectId, ref: 'Forum' },
     tags: [String],
-    comment_ids: [ {type: Schema.Types.ObjectId, ref: 'Comment' }],
+    comment_ids: [{ type: Schema.Types.ObjectId, ref: 'Comment' }],
     user_id: { type: Schema.Types.ObjectId, ref: 'User' }
 });
 var userSchema = Schema({
