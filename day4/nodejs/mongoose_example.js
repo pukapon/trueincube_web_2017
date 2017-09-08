@@ -26,7 +26,7 @@ var User = mongoose.model('User', userSchema, 'user');
 var Comment = mongoose.model('Comment', userSchema, 'comment');
 var Forum = mongoose.model('Forum', userSchema, 'forum');
 
-Topic.find({_id: mongoose.Types.ObjectId("59a7d24b42bb762ab27cc4c3")}).
+Topic.find({}).
     populate('forum_id user_id comment_ids ').
     populate({
         path : "comment_ids",
