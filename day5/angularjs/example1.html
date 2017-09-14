@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="//unpkg.com/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <!-- step 1 -->
+         <a ui-sref="home({contactId:1})">Home</a>
+        <a ui-sref="about({foo:'test'})">about</a>
+        <a ui-sref="gallery({galleryId:123456})">gallery</a>
+        <!-- step 2 -->
+        <br>
+        <button ng-click="goState('home',{contactId:1})">Home</button>
+        <button ng-click="goState('about',{foo:'test'})">About</button>
+        <button ng-click="goState('gallery',{galleryId:123456})">gallery</button>
+        <div ui-view></div>
+    </div>
+    <script>
+
+    var app = angular.module("myApp", ["ui.router"]);
+
+    app.config(function ($stateProvider, $urlRouterProvider) {
+        $stateProvider
+            .state('home', {
+                url: '/home/{contactId:[0-9]{1,8}}',
+                template: '<p>this is part of home</p>',
+                controller: function ($scope,$state,$stateParams) {
+                    console.log($stateParams);
+                }
+            })
+            .state('about', {
+                url: '/about/:foo',
+                template: '<p>this is about <h1>{{foo}}</h1> </p>',
+                controller: function ($scope,$state,$stateParams) {
+                    console.log($stateParams);
+                    $scope.foo = $stateParams.foo;
+                }
+            }).state('gallery', {
+                url: '/gallery?galleryId',
+                template: '<p>this is gallery <h1>{{galleryId}}</h1></p>',
+                controller: function ($scope,$state,$stateParams) {
+                    console.log($stateParams);
+                    $scope.galleryId = $stateParams.galleryId;
+                }
+            });
+    });
+
+    app.controller('myCtrl', function($scope,$state) {
+            $scope.goState = function (statename,param) {
+                $state.go(statename,param);
+            }
+        });
+    </script>
+</body>
+
+</html>
