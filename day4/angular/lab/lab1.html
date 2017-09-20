@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <header>
+            <h1 class="text-center">Review </h1>
+        </header>
+        <div class="container">
+            <div class="list-group">
+                <legend>Reviews</legend>
+                <div class="alert alert-secondary" role="alert" ng-repeat="item in review">
+                    <b>{{item.firstname}} {{item.lastname}} - {{item.star}} คะแนน</b>
+                    <p>{{item.comment}}</p>
+                    <small>{{item.email}}</small>
+                </div>
+            </div>
+            <hr>
+            <form class="form-horizontal" ng-submit="addData(data)">
+                <fieldset>
+                    <!-- Form Name -->
+                    <legend>Review Form</legend>
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="firstname">ชื่อ</label>
+                        <div class="col-md-4">
+                            <input type="text" ng-model="data.firstname" name="firstname" id="firstname" class="form-control input-md">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="lastname">นามสกุล</label>
+                        <div class="col-md-4">
+                            <input type="text" ng-model="data.lastname" name="lastname" id="lastname" class="form-control input-md">
+                        </div>
+                    </div>
+                    <!-- email input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="email">อีเมล์</label>
+                        <div class="col-md-4">
+                            <input type="email" ng-model="data.email" name="email" id="email" class="form-control input-md">
+                        </div>
+                    </div>
+                    <!-- Select Basic -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="selectbasic">ความพึงพอใจ</label>
+                        <div class="col-md-4">
+                            <select ng-model="data.star" id="selectbasic" name="selectbasic" class="form-control">
+                                <option value="1">1 Stars</option>
+                                <option value="2">2 Stars</option>
+                                <option value="3">3 Stars</option>
+                                <option value="4">4 Stars</option>
+                                <option value="5">5 Stars</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- Textarea -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="textarea">แสดงความคิดเห็น</label>
+                        <div class="col-md-4">
+                            <textarea ng-model="data.comment" name="textarea" id="textarea" class="form-control">แสดงความคิดเห็น</textarea>
+                        </div>
+                    </div>
+                    <!-- Button -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="singlebutton"> </label>
+                        <div class="col-md-4">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <script>
+        var app = angular.module("myApp", []);
+        app.controller('myCtrl', function($scope) {
+            $scope.review = []; // เก็บข้อมูลทั้งหมดที่ถูกส่งจากฟอร์ม
+            $scope.data = {}; // ข้อมูลที่ผูกกับ form
+            // ฟังก์ชั่น เพิ่มข้อมูลลง datas
+            $scope.addData = function(data) {
+                $scope.review.push(data);
+                $scope.data = {};
+            };
+        });
+        </script>
+</body>
+
+</html>

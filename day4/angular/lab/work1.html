@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <div class="container">
+            <form class="form-horizontal" ng-submit="addData(data)">
+                <!-- <fieldset> -->
+                    <!-- Form Name -->
+                    <legend>Form Name</legend>
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="textinput">Text Input</label>
+                        <div class="col-md-4">
+                            <input type="text" ng-model="data.text" name="textinput" id="textinput" class="form-control input-md">
+                        </div>
+                    </div>
+                    <!-- Select Basic -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="selectbasic">Select Basic</label>
+                        <div class="col-md-4">
+                            <select ng-model="data.select" id="selectbasic" name="selectbasic" class="form-control">
+                                <option value="" selected></option>
+                                <option value="1">Option one</option>
+                                <option value="2">Option two</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- Button -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="singlebutton">Submit</label>
+                        <div class="col-md-4">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                <!-- </fieldset> -->
+            </form>
+            <!-- //// แสดงผลข้อมูลจาก form /// -->
+            <div class="list-group">
+                <div class="list-group-item clearfix" ng-repeat="item in datas">
+                    <h3>Text Input : {{item.text}}</h3>
+                    <h3>Select : {{item.select}}</h3>
+                </div>
+            </div>
+        </div>
+        <script>
+        var app = angular.module("myApp", []);
+        app.controller('myCtrl', function($scope) {
+            $scope.datas = []; // เก็บข้อมูลทั้งหมดที่ถูกส่งจากฟอร์ม
+            $scope.data = {}; // ข้อมูลที่ผูกกับ form
+            // ฟังก์ชั่น เพิ่มข้อมูลลง datas
+            $scope.addData = function(data) {
+                $scope.datas.push(data);
+                $scope.data = {};
+            };
+        });
+        </script>
+</body>
+
+</html>
+
+
+
+
+
