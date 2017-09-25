@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="//unpkg.com/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+<body>
+
+    <div ng-app="myApp" ng-controller="myCtrl">
+    <p>{{myWelcome}}</p>
+    <p>status : {{statuscode}}</p>
+    <p>statusText : {{statustext}}</p>
+    <button class="btn btn-info" ng-click="getData()">Require</button>
+    </div>
+
+    <script>
+
+    var app = angular.module("myApp", []);
+    app.config(function ($httpProvider) {
+        $httpProvider.defaults.headers.common['x-api-key'] = '61c3233bc8b64efe9b77b2c10ce1e2c4';
+    });
+
+    app.controller('myCtrl', function($scope, $http) {
+        $scope.getData = function () {
+
+            // $http({
+            //     method : "GET",
+            //     url : "https://6cb61b96-06a5-4727-9b80-7907952dc0da.mock.pstmn.io/get/",
+            //     params: {user_id: 1}, // param in url
+            //     data : {"test":"dddd"}, // body in request
+            //     headers : {"x-api-key":"61c3233bc8b64efe9b77b2c10ce1e2c4"}
+            // }).then(function mySuccess(response) {
+            //     $scope.myWelcome = response.data;
+            //     $scope.statuscode = response.status;
+            //     $scope.statustext = response.statusText;
+            // }, function myError(response) {
+            //     console.log(error);
+            // });
+
+            $http.get('https://6cb61b96-06a5-4727-9b80-7907952dc0da.mock.pstmn.io/get/')
+            .then(function (response) {
+                console.log(response);
+                $scope.myWelcome = response.data;
+                $scope.statuscode = response.status;
+                $scope.statustext = response.statusText;
+            },function (error) {
+                console.log(error);
+            });
+        };
+    });
+
+
+
+    </script>
+</body>
+</html>
