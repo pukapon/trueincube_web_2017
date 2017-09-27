@@ -36,7 +36,7 @@
 | 7 กันยายน 2560|AngularJS <br> - Event <br> - Form & Validate  | Workshop : UI Web Application & Mock Up |
 | 14 กันยายน 2560| AngularJS : UI-Router | Workshop : Build Web Application with UI-Route |
 | 21 กันยายน 2560 | AngularJS : directive & http , NodeJS, npm, ExpressJS 	| Workshop : Build Web Application with NodeJS + ExpressJS  |
-| 28 กันยายน 2560 | NodeJS : Jade Render templete, validate, Cookies & Session  | Workshop : Build Surway Application |
+| 28 กันยายน 2560 | AngularJS Service & Library  | Workshop : Build Web Application |
 | 5 ตุลาคม 2560 | Introduction to MongooseJS <br>    - CRUD <br>    - Schema & Model<br>    - Validation | Workshop : Build Mockup & View Employee Record System Application|
 | 12 ตุลาคม 2560 | MEAN : Integrate Appication |	Workshop : Build Employee Record System Application |
 | 19 ตุลาคม 2560 | MEAN : Integrate Appication |	Workshop : Build Employee Record System Application with MEAN|
