@@ -14,6 +14,17 @@ router.get('/', function (req, res, next) {
 });
 
 
+router.get('/:id', function (req, res, next) {
+  model.Category.findOne({ _id: req.params.id }, function (err, data) {
+      if (err) {
+          next(err)
+      } else {
+          res.send({ code: 0, data: data });
+      }
+  })
+});
+
+
 router.post('/', function (req, res, next) {
   var menu = new model.Category(
     req.body
