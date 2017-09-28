@@ -11,7 +11,13 @@ var category = require('./routes/category');
 var app = express();
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/test2', { useMongoClient: true, promiseLibrary: global.Promise });
-
+var allowCrossDomain = function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+}
+app.use(allowCrossDomain);
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
