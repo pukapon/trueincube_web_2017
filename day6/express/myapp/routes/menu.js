@@ -3,7 +3,9 @@ var router = express.Router();
 var model = require('../model/model')
 
 router.get('/', function (req, res, next) {
-    model.Menu.find({}, function (err, data) {
+    model.Menu.find({}).
+    populate('category_id').
+    exec(function (err, data) {
         if (err) {
             next(err)
         } else {
@@ -13,7 +15,9 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/:id', function (req, res, next) {
-    model.Menu.findOne({ _id: req.params.id }, function (err, data) {
+    model.Menu.findOne({ _id: req.params.id }).
+    populate('category_id').
+    exec( function (err, data) {
         if (err) {
             next(err)
         } else {
