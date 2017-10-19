@@ -4,7 +4,7 @@
   "description": "my first socket.io app",
   "dependencies": {
     "express": "^4.15.2",
-    "debug": "~2.6.3",
+    "angular": "^1",
     "socket.io": "^1.7.3"
   },
   "scripts": {
