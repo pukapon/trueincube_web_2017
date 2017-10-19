@@ -5,7 +5,6 @@ pipeline {
             steps {
                 bat '''
                 cd day8/chat-example-server/
-                npm install
                 '''
             }
         }
